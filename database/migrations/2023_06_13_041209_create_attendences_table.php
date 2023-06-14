@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('attendences', function (Blueprint $table) {
             $table->id();
+            $table->string('ip')->unique();
+            $table->string('location');
             $table->timestamps();
         });
     }

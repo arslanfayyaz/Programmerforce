@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Attendence extends Model
 {
     use HasFactory;
+    protected $fillable = ['id','ip','location'];
 }

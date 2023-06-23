@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendenceController;
+use App\Http\Controllers\sortedEmails;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,6 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::put('users/{id}', [UserController::class, 'update']);
     Route::delete('users/{id}', [UserController::class, 'destroy']);
 });
+
+
+Route::get('check-ip',[sortedEmails::class,'calculateTotalHours']);
